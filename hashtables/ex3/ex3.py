@@ -6,6 +6,10 @@ def intersection(arrays):
     # key: number, value: count
     counts = {}
 
+    # Set up intersections list
+    result = []
+
+
     # Iterate though the array of arrays
     for arr in arrays:
         for num in arr:
@@ -14,14 +18,8 @@ def intersection(arrays):
             else:
                 counts[num] += 1
 
-    # Set up intersections list
-    result = []
-
-    # Iterate through the counts table
-    for num, count in counts.items():
-        # If the num exists in all the arrays
-        if count == len(arrays):
-            result.append(num)
+                if counts[num] == len(arrays):
+                    result.append(num)
 
     return result
 
