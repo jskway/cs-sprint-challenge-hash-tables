@@ -2,7 +2,26 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    # Set up hash table to track counts
+    # key: number, value: count
+    counts = {}
+
+    # Iterate though the array of arrays
+    for arr in arrays:
+        for num in arr:
+            if num not in counts:
+                counts[num] = 1
+            else:
+                counts[num] += 1
+
+    # Set up intersections list
+    result = []
+
+    # Iterate through the counts table
+    for num, count in counts.items():
+        # If the num exists in all the arrays
+        if count == len(arrays):
+            result.append(num)
 
     return result
 
